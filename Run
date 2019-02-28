@@ -2,6 +2,6 @@
 
 clear
 
-g++ main.cpp
+g++ -ftime-report main.cpp
 
 ./a.out
