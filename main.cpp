@@ -48,7 +48,7 @@ void iris_dataset_loading_csv(){
     getline(ip,petal_width,',');
     getline(ip,species,'\n');
 
-    cout << "sepal_length: " << sepal_length << " ," << species   << endl;
+   // cout << "sepal_length: " << sepal_length << " ," << species   << endl;
 
     iris_param_matrix[i][0] = ::atof(sepal_length.c_str());
     iris_param_matrix[i][1] = ::atof(sepal_width.c_str());
