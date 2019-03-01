@@ -11,7 +11,9 @@ const U16 flatten_length_of_image = 784;
 ///////////////////////////////////
 float iris_param_matrix[150][4];
 string iris_result[150];
-float y[150]; //encoded output
+float y[150]; //encoded output//
+//Here serosa is 1 and other species are encoded as 0. ////
+////binary classifier//////////////
 ///////////////////////////////////
 
 float sigmoid(float z){
@@ -81,12 +83,12 @@ int main(){
   iris_dataset_loading_csv();
   ///////////////////////////
 
-  //initializing weights///
+  ////initializing weights////////////////////////
   for(U16 i = 0; i < 4; i++){
-    //mat_weights[i] = (float)(rand()%100)/100;
+  ////mat_weights[i] = (float)(rand()%100)/100;
     mat_weights[i] = (float)0;
   } b = 0;
-  ////end initializing weights and bias/////
+  ////end initializing weights and bias///////////
 
 ///getting iris parameter row one by one////////
   for(int i = 0; i < 150; i++){
@@ -99,13 +101,17 @@ int main(){
   A = sigmoid(z); // A = y hat = sigmoid(z) computed/// sigmoid function/////
   cost = -(y[i]*log(A) + (1-y[i])*log(1-A)); // cost function
   cout << "prediction: " << A << " ,cost: " <<cost << " ,y=" << y[i]<<endl;
-  dz_db = A - y[i]; 
+  dz_db = A - y[i];  /// calculate dz= db = A-y /////////
 
+/////////optimization///////////////////////////////
     for (U16 j = 0; j < 4; j++){
       mat_weights_dw[j] = iris_param_matrix[i][j]*dz_db;
       mat_weights[j] = mat_weights[j] - learning_rate * mat_weights_dw[j];
   } b = b - learning_rate * dz_db;
+  ///////end optimization////////////////////
+
   /// accuracy ////
+
 }
 ///// end outer loop//////
 
