@@ -1,7 +1,7 @@
 /*****************************\
 > iris in C++
 > Version: 1.0
-> Author: Saif Ahmed Quarishi
+> Author: Saif Ahmed Quarishi and Rouhan Noor
 > Data: 27.FEB.2019
 \*****************************/
 
